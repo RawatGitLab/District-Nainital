@@ -26,7 +26,7 @@ export default function App() {
   const [error, setError] = useState<string | null>(null);
 
   // Map & Interaction state
-  const [activeBaseMap, setActiveBaseMap] = useState<string>("satellite");
+  const [activeBaseMap, setActiveBaseMap] = useState<string>("osm");
   const [selectedFeature, setSelectedFeature] = useState<GisFeature | null>(null);
   const [hoveredFeature, setHoveredFeature] = useState<GisFeature | null>(null);
   const [isTableCollapsed, setIsTableCollapsed] = useState<boolean>(true);
@@ -246,7 +246,7 @@ export default function App() {
 
       // Override colors for Polygons and Linestrings
       if (type === "polygon") {
-        color = "#ffffff";
+        color = "#000000";
         fillColor = "transparent";
         fillOpacity = 0;
       } else if (type === "linestring") {
