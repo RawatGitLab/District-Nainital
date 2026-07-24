@@ -3,6 +3,7 @@ import { GisFeature, LayerConfig, BaseMap } from "./types";
 import Sidebar from "./components/Sidebar";
 import MapComponent from "./components/MapComponent";
 import AttributeTable from "./components/AttributeTable";
+import ThemeToggle from "./components/ThemeToggle";
 import { 
   Database, 
   Layers, 
@@ -328,7 +329,7 @@ export default function App() {
   };
 
   return (
-    <div className="flex flex-col h-screen w-screen bg-slate-100 overflow-hidden font-sans">
+    <div className="flex flex-col h-screen w-screen bg-slate-100 dark:bg-slate-950 text-slate-900 dark:text-slate-100 overflow-hidden font-sans">
       {/* Visual Navigation Header */}
       <header className="h-14 bg-slate-900 text-slate-100 px-4 flex items-center justify-between border-b border-slate-950 shrink-0 select-none shadow-md">
         <div className="flex items-center space-x-3">
@@ -348,6 +349,7 @@ export default function App() {
 
         {/* Global summary specs */}
         <div className="flex items-center space-x-3 text-xs font-semibold text-slate-300">
+          <ThemeToggle />
           <button
             onClick={() => fetchFeatures(true)}
             disabled={loading}
